@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Scripts.Audio;
 using Scripts.Factory;
 using Scripts.Game;
-using Scripts.UserInput;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -11,14 +10,10 @@ namespace Scripts.GamePlay
 {
     public class ObjectSpawner : MonoBehaviour,
                                  IGameInitListener,
-                                 IGameStartListener,
-                                 IUpdateListener,
+                                 IGameStartListener, 
                                  IGameFinishListener,
                                  IGameRestartListener
     {
-
-        private float _moveSpeed = 5f;
-        
         [SerializeField] private MergeObjectFactory _factory;
         
         
@@ -38,12 +33,10 @@ namespace Scripts.GamePlay
         private Coroutine _waitCoroutine;
 
         private AudioManager _audioManager;
-        private InputManager _input;
 
         void IGameInitListener.OnGameInit()
         {
             _audioManager = GameManager.Instance.GetService<AudioManager>();
-            _input = GameManager.Instance.GetService<InputManager>();
         }
 
         void IGameStartListener.OnGameStart()
@@ -73,23 +66,9 @@ namespace Scripts.GamePlay
             _rightBoard = _rightSpawnPoint.position.x - valueX;
         }
 
-        void IUpdateListener.Update(float deltaTime)
+        public void MoveSpawnPoint(Vector2 direction)
         {
-            // TEST!!!!!
-            if (_currentObj == null)
-                return;
-            
-            if (Input.GetKeyDown(KeyCode.S))
-                Spawn();
-
-            float x = Input.GetAxis("Horizontal");
-            MoveSpawnPoint(x);
-        }
-
-        private void MoveSpawnPoint(float f)
-        {
-            Vector3 newPos = _spawnTransform.position + (_moveSpeed * Time.deltaTime * new Vector3(f, 0, 0));
-
+            Vector2 newPos = new Vector2(direction.x, _spawnTransform.position.y);
             newPos.x = Mathf.Clamp(newPos.x, _leftBoard, _rightBoard);
             _spawnTransform.position = newPos;
         }

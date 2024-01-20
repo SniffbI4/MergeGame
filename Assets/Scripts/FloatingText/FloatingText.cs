@@ -1,13 +1,11 @@
 ﻿using System;
-using Scripts.Game;
 using Scripts.Pool;
 using TMPro;
 using UnityEngine;
 
 namespace FloatingText
 {
-    public class FloatingText : MonoBehaviour, 
-                                IUpdateListener,
+    public class FloatingText : MonoBehaviour,
                                 IPoolObject
     {
         [SerializeField] private Animator _animator;
@@ -38,7 +36,7 @@ namespace FloatingText
             _damageText.color = color;
         }
 
-        void IUpdateListener.Update(float deltaTime)
+        private void Update()
         {
             if (_follow)
             {

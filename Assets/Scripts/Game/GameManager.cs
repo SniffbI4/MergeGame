@@ -29,6 +29,7 @@ namespace Scripts.Game
         [SerializeField] private ObjectSpawner _spawner;
         [SerializeField] private Canvas _mainCanvas;
 
+        [Space(30)]
         [ShowInInspector]
         private GameFlow _gameFlow;
         

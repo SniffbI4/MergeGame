@@ -12,13 +12,13 @@ namespace Scripts.GamePlay
         [SerializeField] private MergeElement _element;
 
 
-        private void Awake()
+        private void Start()
         {
             Vector3 startScale = transform.localScale;
             transform.localScale = Vector3.zero;
             transform.DOScale(startScale, 0.2f)
                      .SetLink(gameObject)
-                     .SetEase(Ease.OutBack);
+                     .SetEase(Ease.OutBack);    
         }
 
         private void OnCollisionEnter2D(Collision2D col)
