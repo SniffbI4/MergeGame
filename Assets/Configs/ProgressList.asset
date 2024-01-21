@@ -18,33 +18,53 @@ MonoBehaviour:
     MainComponent: {fileID: 2127904217, guid: e46dcc6a71d5c644c9b87d3079361c82, type: 3}
     Level: 1
     ScoreWhenMerge: 2
-  - IsOpened: 1
+  - IsOpened: 0
     ChanceToChoose: 0.7
     MainComponent: {fileID: 1406130805, guid: 7d08be9b88f2033439cc8a628c3d22b5, type: 3}
     Level: 2
     ScoreWhenMerge: 4
-  - IsOpened: 1
+  - IsOpened: 0
     ChanceToChoose: 0.3
     MainComponent: {fileID: 330297962, guid: ba4c9153434bbcf4d8cf9fd06d761c59, type: 3}
     Level: 3
     ScoreWhenMerge: 6
-  - IsOpened: 1
+  - IsOpened: 0
     ChanceToChoose: 0
     MainComponent: {fileID: 1349781803, guid: 9ec85cd3bde22e04292e0569526ceeca, type: 3}
     Level: 4
     ScoreWhenMerge: 8
-  - IsOpened: 1
+  - IsOpened: 0
     ChanceToChoose: 0
     MainComponent: {fileID: 380072473, guid: dd5a5668d99e0424cbaa969dc4d097bb, type: 3}
     Level: 5
     ScoreWhenMerge: 10
-  - IsOpened: 1
+  - IsOpened: 0
     ChanceToChoose: 0
     MainComponent: {fileID: 2113383142, guid: dbed33c16d052974fbb155fc32721bc8, type: 3}
     Level: 6
     ScoreWhenMerge: 12
-  - IsOpened: 1
+  - IsOpened: 0
     ChanceToChoose: 0
     MainComponent: {fileID: 1767197112, guid: 9d44ffd879dd22d4cac07732b0efddf0, type: 3}
     Level: 7
     ScoreWhenMerge: 14
+  - IsOpened: 0
+    ChanceToChoose: 0
+    MainComponent: {fileID: 1767197112, guid: 26e8526567d416b4c8064b4e85046154, type: 3}
+    Level: 8
+    ScoreWhenMerge: 16
+  - IsOpened: 0
+    ChanceToChoose: 0
+    MainComponent: {fileID: 1767197112, guid: 35fa1538e334a594c9d3e496664f57d6, type: 3}
+    Level: 9
+    ScoreWhenMerge: 18
+  - IsOpened: 0
+    ChanceToChoose: 0
+    MainComponent: {fileID: 1767197112, guid: d814417b90bfd6042aea34bf1e0acc5d, type: 3}
+    Level: 10
+    ScoreWhenMerge: 20
+  - IsOpened: 0
+    ChanceToChoose: 0
+    MainComponent: {fileID: 1767197112, guid: 244d94d6e12f2a74294407ecdb8076ef, type: 3}
+    Level: 11
+    ScoreWhenMerge: 22
