@@ -7,7 +7,6 @@ using Scripts.Audio;
 using Scripts.Progress;
 using Scripts.UI;
 using Scripts.UserInput;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Scripts.Game
@@ -30,10 +29,8 @@ namespace Scripts.Game
         [SerializeField] private Canvas _mainCanvas;
 
         [Space(30)]
-        [ShowInInspector]
         private GameFlow _gameFlow;
         
-        [ShowInInspector]
         public Dictionary<Type, object> _services = new();
 
         private void Awake()

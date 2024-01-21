@@ -1,6 +1,5 @@
 ﻿using System;
 using Scripts.Game;
-using Sirenix.OdinInspector;
 
 namespace Scripts.GamePlay
 {
@@ -19,7 +18,6 @@ namespace Scripts.GamePlay
             OnCurrencyChanged?.Invoke(_current);
         }
 
-        [Button]
         public void AddCurrency(int icrease)
         {
             _current += icrease;

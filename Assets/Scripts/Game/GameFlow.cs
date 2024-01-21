@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Scripts.Game
@@ -8,11 +7,8 @@ namespace Scripts.Game
     [Serializable]
     public class GameFlow
     {
-        [ShowInInspector]
         private HashSet<IGameListener> _listeners = new();
-        [ShowInInspector]
         private HashSet<IUpdateListener> _updateListeners = new();
-        [ShowInInspector]
         private HashSet<IFixedUpdateListener> _fixedUpdateListeners = new();
 
         private bool _onPause = false;
@@ -43,7 +39,6 @@ namespace Scripts.Game
             Debug.Log("GAME INITED");
         }
 
-        [Button]
         public void StartGame()
         {
             foreach (var listener in _listeners)
@@ -77,7 +72,6 @@ namespace Scripts.Game
             }
         }
 
-        [Button]
         public void FinishGame()
         {
             foreach (var listener in _listeners)
@@ -91,7 +85,6 @@ namespace Scripts.Game
             Debug.Log("GAME FINISHED");
         }
 
-        [Button]
         public void PauseGame()
         {
             foreach (var listener in _listeners)
@@ -105,7 +98,6 @@ namespace Scripts.Game
             Debug.Log("GAME PAUSED");
         }
 
-        [Button]
         public void ResumeGame()
         {
             foreach (var listener in _listeners)
@@ -119,7 +111,6 @@ namespace Scripts.Game
             Debug.Log("GAME RESUMED");
         }
 
-        [Button]
         public void RestartGame()
         {
             foreach (var listener in _listeners)

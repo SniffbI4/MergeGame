@@ -56,7 +56,7 @@ namespace Scripts.Audio
 
         public void PlayClipByType(ClipType clipType)
         {
-            var clip = _soundLibrary.AudioClips[clipType];
+            var clip = _soundLibrary.AudioClips.Find(x => x.ClipType == clipType).AudioClip;
             PlaySound(clip);
         }
 

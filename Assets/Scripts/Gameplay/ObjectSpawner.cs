@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Scripts.Audio;
 using Scripts.Factory;
 using Scripts.Game;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Scripts.GamePlay
@@ -28,7 +27,6 @@ namespace Scripts.GamePlay
         
         [SerializeField] private GameObject _ray;
 
-        [ShowInInspector]
         private List<MergeElement> _elementsOnScene = new();
         private MergeElement _currentObj;
         private Coroutine _waitCoroutine;
