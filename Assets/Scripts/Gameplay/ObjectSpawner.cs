@@ -42,10 +42,12 @@ namespace Scripts.GamePlay
 
         void IGameStartListener.OnGameStart()
         {
+            if (_waitCoroutine != null)
+                StopCoroutine(_waitCoroutine);
             CreatePrefab();
         }
 
-        public void CreatePrefab()
+        private void CreatePrefab()
         {
             if (_currentObj != null)
                 Destroy(_currentObj.gameObject);
