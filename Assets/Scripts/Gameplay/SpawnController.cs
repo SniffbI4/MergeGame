@@ -25,6 +25,9 @@ namespace Scripts.GamePlay
 
         private void SpawnObject()
         {
+            if (_inMove == false)
+                return;
+
             _inMove = false;
             _spawner.Spawn();
         }

@@ -15,6 +15,7 @@ namespace Scripts.GamePlay
                                  IGameRestartListener
     {
         [SerializeField] private MergeObjectFactory _factory;
+        [SerializeField] private FinishGameController _finish;
         
         
         
@@ -51,10 +52,13 @@ namespace Scripts.GamePlay
             
             _currentObj = _factory.CreateRandObject();
             SetupBounds();
+            MoveSpawnPoint(_spawnTransform.position);
             SpawnElement(_currentObj, _spawnTransform.position, Quaternion.identity);
             _audioManager.PlayClipByType(ClipType.Spawn);
             _currentObj.transform.SetParent(_spawnTransform);
             _ray.SetActive(true);
+            
+            _finish.CheckCollision();
         }
 
         private void SetupBounds()
@@ -115,7 +119,7 @@ namespace Scripts.GamePlay
             }
         }
 
-        public void SpawnElement(MergeElement element, Vector3 spawnPoint, Quaternion identity)
+        private void SpawnElement(MergeElement element, Vector3 spawnPoint, Quaternion identity)
         {
             element.transform.position = spawnPoint;
             element.transform.rotation = identity;

@@ -81,7 +81,7 @@ namespace Scripts.UI
         }
 
         private void OnSoundButtonPressed(bool state) => 
-                _audioManager.SetMusicMuteState(state);
+                _audioManager.SetMusicMuteState(isMute: state);
 
         public void ShowPausePanel() => 
                 _pausePanel.SetActive(true);

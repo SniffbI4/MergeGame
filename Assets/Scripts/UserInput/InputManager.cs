@@ -1,6 +1,7 @@
 ﻿using System;
 using Scripts.Game;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Scripts.UserInput
 {
@@ -36,7 +37,10 @@ namespace Scripts.UserInput
 
             if (Input.GetMouseButtonDown(0))
             {
-                OnMouseButtonDown?.Invoke();
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    OnMouseButtonDown?.Invoke();
+                }
             }
 
             if (Input.GetMouseButtonUp(0))
@@ -44,12 +48,6 @@ namespace Scripts.UserInput
                 OnMouseButtonUp?.Invoke();
             }
             
-            //test
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                GameManager.Instance.GetService<GameFlow>().PauseGame();
-            }
-
             MousePosition = Input.mousePosition;
         }
     }

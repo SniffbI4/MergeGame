@@ -9,22 +9,22 @@ namespace Scripts.UI
         [SerializeField] private Sprite _activeIcon;
         [SerializeField] private Sprite _inActiveIcon;
         
-        private bool _state = true;
+        private bool _isMutedState = false;
 
         protected override void HandleClick()
         {
             base.HandleClick();
             
-            _state = !_state;
+            _isMutedState = !_isMutedState;
             
-            PressButtonWithState(_state);
+            PressButtonWithState(_isMutedState);
             
             ChangeSprite();
         }
 
         private void ChangeSprite()
         {
-            Sprite newSprite = _state ? _activeIcon : _inActiveIcon;
+            Sprite newSprite = _isMutedState ? _inActiveIcon : _activeIcon;
             _sourceImage.sprite = newSprite;
         }
     }
