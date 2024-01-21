@@ -87,7 +87,7 @@ namespace Scripts.Game
             }
 
             _onPause = true;
-            //Time.timeScale = 0f;
+            Time.timeScale = 0f;
             Debug.Log("GAME FINISHED");
         }
 
@@ -101,7 +101,7 @@ namespace Scripts.Game
             }
 
             _onPause = true;
-            //Time.timeScale = 0f;
+            Time.timeScale = 0f;
             Debug.Log("GAME PAUSED");
         }
 
@@ -115,7 +115,7 @@ namespace Scripts.Game
             }
 
             _onPause = false;
-            //Time.timeScale = 1f;
+            Time.timeScale = 1f;
             Debug.Log("GAME RESUMED");
         }
 
@@ -129,7 +129,7 @@ namespace Scripts.Game
             }
 
             _onPause = false;
-            //Time.timeScale = 1f;
+            Time.timeScale = 1f;
             Debug.Log("GAME RESTARTED");
             
             StartGame();
